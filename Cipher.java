@@ -190,7 +190,7 @@ public class Cipher{
     //the string
     int charValue;
 
-    if((isLowerCase(ciphertext) == true) && isLowerCase(key)) {
+    if((isLowerCase(ciphertext) == true) && isLowerCase(key) == true) {
       //this is the variable that keeps track of the key and loops it
       //if it reaches its max length
       int keyLoop = 0;
@@ -225,6 +225,7 @@ public class Cipher{
   @param text4: Caesar Shift decoding example used in PA3.pdf
   */
   public static void main(String[] args){
+    /**
     //this is testing the Vigènere Encode
     String text1 = "pau3cao";
     String key1 = "zzz";
@@ -232,13 +233,13 @@ public class Cipher{
     //this is testing the Vigènere Decode
     String text2 = "yyyyy";
     System.out.println(vigenereDecode(text2, key1));
-
+    */
     //this is testing the Caesar Shift Encode
     char text3 = 99;
-    char key2 = 121;
+    char key2 = 122;
     System.out.println(caesarShiftEncode(text3,key2));
     //this is testing the Caesar Shift Decode
-    char text4 = 97;
+    char text4 = 121;
     System.out.println(caesarShiftDecode(text4,key2));
 
   }
