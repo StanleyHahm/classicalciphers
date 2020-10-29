@@ -97,7 +97,6 @@ public class Cipher{
       newChar = (char)(newDigit + LOWERCASE_A);
 
     }
-
     return newChar;
   }
 
@@ -122,14 +121,8 @@ public class Cipher{
     if((isLowerCase(ciphertext) == true) && (isLowerCase(key) == true)){
       newDigit = (ciphertext - LOWERCASE_A) - (key - LOWERCASE_A);
       newDigit = newDigit % MODULO_VALUE;
-      newChar = (char)(newDigit + LOWERCASE_A);
+      newChar = (char)(newDigit + LOWERCASE_A + MODULO_VALUE);
 
-    }
-    if(isLowerCase(newChar) == true){
-      newChar = newChar;
-    }
-    else{
-      newChar += (char)(MODULO_VALUE);
     }
     return newChar;
   }
@@ -210,7 +203,7 @@ public class Cipher{
         if (keyLoop == key.length()){
           keyLoop = 0;
         }
-        newText += (char)(charValue + LOWERCASE_A + MODULO_VALUE);
+        newText += (char)(charValue + LOWERCASE_A);
       }
     }
     //if the string has not a lowercase letter or not a letter,
@@ -218,7 +211,6 @@ public class Cipher{
     else{
       return null;
     }
-
     return newText;
   }
 
@@ -234,19 +226,19 @@ public class Cipher{
   */
   public static void main(String[] args){
     //this is testing the Vigènere Encode
-    String text1 = "whatfools";
-    String key1 = "puck";
+    String text1 = "pau3cao";
+    String key1 = "zzz";
     System.out.println(vigenereEncode(text1, key1));
     //this is testing the Vigènere Decode
-    String text2 = "lbcduiqvh";
+    String text2 = "yyyyy";
     System.out.println(vigenereDecode(text2, key1));
 
     //this is testing the Caesar Shift Encode
     char text3 = 99;
-    char key2 = 112;
+    char key2 = 121;
     System.out.println(caesarShiftEncode(text3,key2));
     //this is testing the Caesar Shift Decode
-    char text4 = 119;
+    char text4 = 97;
     System.out.println(caesarShiftDecode(text4,key2));
 
   }
