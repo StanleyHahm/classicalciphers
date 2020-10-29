@@ -91,7 +91,7 @@ public class Cipher{
 
     //if the plaintext text is lowercase, then everything is shifted to
     //ciphered text by the key
-    if(isLowerCase(plaintext) == true){
+    if((isLowerCase(plaintext) == true) && (isLowerCase(key) == true)){
       newDigit = (plaintext - LOWERCASE_A) + (key - LOWERCASE_A);
       newDigit = newDigit % MODULO_VALUE;
       newChar = (char)(newDigit + LOWERCASE_A);
@@ -118,7 +118,7 @@ public class Cipher{
 
     //if the ciphered text is lowercase, then everything is shifted to
     //original text by the key
-    if(isLowerCase(ciphertext) == true){
+    if((isLowerCase(ciphertext) == true) && (isLowerCase(key) == true)){
       newDigit = (ciphertext - LOWERCASE_A) - (key - LOWERCASE_A);
       newDigit = newDigit % MODULO_VALUE;
       newChar = (char)(newDigit + LOWERCASE_A + MODULO_VALUE);
@@ -147,7 +147,7 @@ public class Cipher{
 
     //if every letter in string is lower case, then shift the plaintext
     //by the key for each letter
-    if(isLowerCase(plaintext) == true){
+    if((isLowerCase(plaintext) == true) && (isLowerCase(key) == true)){
       //this is the variable that keeps track of the key and loops it
       //if it reaches its max length
       int keyLoop = 0;
@@ -190,7 +190,7 @@ public class Cipher{
     //the string
     int charValue;
 
-    if(isLowerCase(ciphertext) == true){
+    if((isLowerCase(ciphertext) == true) && isLowerCase(key)) {
       //this is the variable that keeps track of the key and loops it
       //if it reaches its max length
       int keyLoop = 0;
@@ -227,7 +227,7 @@ public class Cipher{
   public static void main(String[] args){
     //this is testing the Vigènere Encode
     String text1 = "paulcao";
-    String key1 = "cse";
+    String key1 = "cs3";
     System.out.println(vigenereEncode(text1, key1));
     //this is testing the Vigènere Decode
     String text2 = "rsynueq";
@@ -239,7 +239,7 @@ public class Cipher{
     System.out.println(caesarShiftEncode(text3,key2));
     //this is testing the Caesar Shift Decode
     char text4 = 97;
-    System.out.println(caesarShiftDecode(text4,key2));  
+    System.out.println(caesarShiftDecode(text4,key2));
 
   }
 }
